@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artistic Hair Transplant Center</title>
+  <title>Artistic Hair Transplant Clinic Uganda</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +40,17 @@
     .nav-link:hover,.nav-link.active{color:var(--teal)!important;}
     .nav-link:hover:after{width:100%;}
     .navbar-toggler{border:0;box-shadow:none!important;}
+
+    .brand-wrap{gap:12px;min-width:245px;}
+    .brand-text{display:flex;flex-direction:column;line-height:1;}
+    .brand-main{font-family:'Plus Jakarta Sans',sans-serif;font-size:21px;font-weight:800;letter-spacing:1px;color:var(--ink);}
+    .brand-sub{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.25px;color:var(--teal);margin-top:4px;white-space:nowrap;}
+    .navbar-brand:hover .logo-img{transform:rotate(-5deg) scale(1.05);}
+    html,body{width:100%;max-width:100%;overflow-x:hidden!important;}
+    section,.container,.container-fluid,.row{max-width:100%;}
+    .row{margin-left:0;margin-right:0;}
+    img,video,canvas,iframe{max-width:100%;}
+    @media(max-width:768px){.brand-wrap{min-width:auto}.brand-main{font-size:16px}.brand-sub{font-size:8px;letter-spacing:.8px}.logo-img{width:44px;height:44px}}
 
     .hero{
       min-height:100vh;
@@ -106,6 +117,15 @@
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
+    .afro-highlight{
+      color:var(--teal-dark);
+      font-weight:800;
+      background:linear-gradient(90deg,rgba(53,180,194,.16),rgba(53,180,194,.04));
+      padding:2px 7px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+
     .hero p{
       font-size:20px;
       color:var(--muted);
@@ -292,15 +312,28 @@
       .mini-stat{width:100%;text-align:center;}
     }
 
+    /* Uganda branch final refinements */
+    html,body{width:100%;max-width:100%;overflow-x:hidden!important;}
+    section,.container,.container-fluid,.row{max-width:100%;}
+    .row{margin-left:0;margin-right:0;}
+    footer img{display:none!important;}
+    .hero h1{font-size:clamp(36px,5vw,70px);}
+    .hero p{font-size:18px;line-height:1.75;}
+    .section-heading p,.about-panel p,.treatment-card p,.client-frame p,.ba-content p,.award-card p,.contact-box p,.contact-item,.form-control,.form-select{font-size:16px;}
+    @media(max-width:575px){.hero h1{font-size:clamp(34px,11vw,48px)}.hero p{font-size:16px}.brand-sub{white-space:normal}.navbar-brand{max-width:240px}}
+
   </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#home">
+    <a class="navbar-brand d-flex align-items-center brand-wrap" href="#home">
       <img src="images/logo.avif" class="logo-img" alt="Artistic Logo">
-      ARTISTIC
+      <div class="brand-text">
+        <span class="brand-main">ARTISTIC</span>
+        <span class="brand-sub">Hair Transplant Clinic Uganda</span>
+      </div>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -324,9 +357,9 @@
   <div class="container position-relative">
     <div class="row align-items-center g-5">
       <div class="col-lg-6" data-aos="fade-right">
-        <div class="hero-badge"><i class="bi bi-stars"></i> Afro-Textured Hair Restoration</div>
-        <h1>Reclaim Your Confidence. <span>Restore Your Hair.</span></h1>
-        <p>Uganda's leading clinic for Afro-textured hair transplants, hair restoration and scalp treatments — where expertise meets exceptional results.</p>
+        <div class="hero-badge"><i class="bi bi-stars"></i> Afro Hair Restoration Specialists</div>
+        <h1>Reclaim Your Confidence. <span>Restore Your Afro Hair.</span></h1>
+        <p>Uganda's leading clinic for <strong class="afro-highlight">Afro-textured hair transplants</strong>, <strong class="afro-highlight">curly, coiled and kinky hair restoration</strong>, and scalp treatments — where expertise meets exceptional results.</p>
         <div class="d-sm-flex gap-3 justify-content-lg-start justify-content-center">
           <a href="https://www.artisticbuz.com/" target="_blank" rel="noopener" class="btn-main"><i class="bi bi-calculator"></i> Hair Calculator</a>
           <a href="#about" class="btn-ghost"><i class="bi bi-arrow-down-circle"></i> About Us</a>
@@ -351,17 +384,17 @@
   <div class="container">
     <div class="about-panel" data-aos="fade-up">
       <div class="eyebrow">About Us</div>
-      <h2>Specialized hair restoration for Afro-textured hair since 2015.</h2>
+      <h2>Uganda clinic connected to Artistic Hair Transplant Clinic Kenya.</h2>
       <div class="row g-4 mt-3">
         <div class="col-lg-6">
-          <p>Artistic Hair Transplant Centre is a modern, specialized clinic in Nairobi, Kenya since 2015, dedicated to advanced hair restoration for men and women with Afro-textured hair.</p>
-          <p>Our team has extensive experience working with tightly-coiled, curly, and kinky hair types, ensuring every procedure respects the unique structure, curl pattern, and follicular characteristics of African hair.</p>
-          <p>We provide exceptional Scalp Micropigmentation (SMP) and FUE (Follicular Unit Extraction) services, each tailored to the individual needs of clients seeking natural-looking density, refined hairlines, and long-lasting results.</p>
+          <p>Artistic Hair Transplant Clinic Uganda is the Ugandan clinic connected to Artistic Hair Transplant Clinic Kenya, a specialized hair restoration brand known for Afro-textured hair expertise since 2015.</p>
+          <p>From our Kampala clinic at Fotogenix Centre, Kulambiro Ring Road, we bring Ugandan patients the same Artistic standard of consultation, planning and aftercare support.</p>
+          <p>We focus on natural-looking hairline design, FUE hair transplant guidance, PRP support, scalp micropigmentation and patient education for men and women experiencing hair loss.</p>
         </div>
         <div class="col-lg-6">
-          <p>Our facility utilizes advanced, minimally invasive techniques designed specifically to protect the curvature of Afro hair follicles — allowing patients to achieve excellent cosmetic outcomes with minimal risk and downtime.</p>
-          <p>By combining the latest FUE technologies with expertly executed SMP sessions for clients who prefer non-surgical solutions, our highly trained trichology team delivers leading-edge treatments in a comfortable, supportive, and culturally aware environment.</p>
-          <p>We offer a client-centered approach to correcting hair loss, thinning, traction alopecia, and male or female pattern baldness with precision to minimize scarring, maximize density, and blend seamlessly with natural Afro-textured hair.</p>
+          <p>The Uganda clinic is built to serve local patients who want professional assessment before choosing hair transplant, PRP therapy, SMP or other scalp restoration options.</p>
+          <p>As part of the wider Artistic Hair Transplant Clinic Kenya network, our approach respects the structure, curl pattern and follicular characteristics of African hair, helping clients make safe and realistic decisions.</p>
+          <p>Every consultation is handled with a client-centered approach focused on clear guidance, natural density goals, donor-area assessment and long-term confidence.</p>
         </div>
       </div>
       <div class="about-points">
@@ -378,12 +411,12 @@
     <div class="section-heading" data-aos="fade-up">
       <div class="eyebrow">Clinic Moments</div>
       <h2>Trusted public figures and patient stories</h2>
-      <p>Framed images referenced from the original Artistic Hair Transplant Centre website section.</p>
+      <p>Public figures and client moments connected to the Artistic Hair Transplant Clinic Kenya brand, now represented locally through Artistic Hair Transplant Clinic Uganda.</p>
     </div>
     <div class="row g-4">
       <div class="col-md-6 col-lg-3" data-aos="fade-up">
         <div class="client-frame">
-          <img src="images/Ferdinand.avif" alt="Ferdinand Waititu at Artistic Hair Transplant Centre">
+          <img src="images/Ferdinand.avif" alt="Ferdinand Waititu at Artistic Hair Transplant Clinic">
           <div class="content"><h4>Ferdinand Waititu</h4><p>Former Governor of Kiambu County.</p></div>
         </div>
       </div>
@@ -395,13 +428,13 @@
       </div>
       <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
         <div class="client-frame">
-          <img src="images/babu.avif" alt="Hon. Dr. Babu Owino at Artistic Hair Transplant Centre">
+          <img src="images/babu.avif" alt="Hon. Dr. Babu Owino at Artistic Hair Transplant Clinic">
           <div class="content"><h4>Hon. Dr. Babu Owino</h4><p>Kenyan public figure and leader.</p></div>
         </div>
       </div>
       <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
         <div class="client-frame">
-          <img src="images/sabina.avif" alt="Hon. Sabina Chege at Artistic Hair Transplant Centre">
+          <img src="images/sabina.avif" alt="Hon. Sabina Chege at Artistic Hair Transplant Clinic">
           <div class="content"><h4>Hon. Sabina Chege</h4><p>Member of the Kenyan Parliament.</p></div>
         </div>
       </div>
@@ -413,8 +446,8 @@
   <div class="container">
     <div class="section-heading" data-aos="fade-up">
       <div class="eyebrow">Our Team</div>
-      <h2>Specialists focused on natural results</h2>
-      <p>A clean team layout that feels premium without too many cards or crowded sections.</p>
+      <h2>Uganda team and Artistic Hair Transplant Clinic Kenya specialists</h2>
+      <p>The Uganda clinic is managed locally while working within the Artistic Hair Transplant Clinic Kenya brand network.</p>
     </div>
 
     <div class="row g-4 align-items-center">
@@ -425,9 +458,9 @@
       </div>
       <div class="col-lg-7" data-aos="fade-left">
         <div class="team-list">
-          <div class="team-person"><img src="images/Abhishek.avif" alt="Dr. Abhishek Malviya"><div><h5>Dr. Abhishek Malviya</h5><p>Dermatologist / Hair Trichologist</p></div></div>
+          <div class="team-person"><img src="images/ken.JPG" alt="Sseruwagi Kenneth"><div><h5>Sseruwagi Kenneth</h5><p>Managing Director, Uganda</p></div></div>
+          <div class="team-person"><img src="images/grace.JPG" alt="Grace Babu"><div><h5>Grace Babu</h5><p>Hair Transplant Specialist</p></div></div>
           <div class="team-person"><img src="images/jared.avif" alt="Jared H Babu"><div><h5>Jared H Babu</h5><p>Hair Trichologist / Micropigmentologist</p></div></div>
-          <div class="team-person"><img src="images/mercy.avif" alt="Dr. Mercy Makana"><div><h5>Dr. Mercy Makana Ndege</h5><p>Consultant Plastic, Reconstructive & Aesthetic Surgeon</p></div></div>
           
         </div>
       </div>
@@ -440,7 +473,7 @@
     <div class="section-heading" data-aos="fade-up">
       <div class="eyebrow">Treatments</div>
       <h2>Advanced hair and scalp solutions</h2>
-      <p>The page uses the logo colors — black, white and turquoise — with soft animation and a cleaner modern layout.</p>
+      <p>Available through the Uganda clinic with consultation support connected to the wider Artistic Hair Transplant Clinic Kenya network.</p>
     </div>
 
     <div class="row g-4">
@@ -459,7 +492,7 @@
     <div class="section-heading" data-aos="fade-up">
       <div class="eyebrow">Before & After</div>
       <h2>Visible hair restoration transformations</h2>
-      <p>Before and after patient images linked directly from the original Artistic Hair Transplant Centre website gallery.</p>
+      <p>Before and after patient images linked directly from the original Artistic Hair Transplant Clinic website gallery.</p>
     </div>
 
     <div class="row g-4">
@@ -511,7 +544,7 @@
     <div class="section-heading" data-aos="fade-up">
       <div class="eyebrow">Awards & Recognition</div>
       <h2>Recognized clinic standards and patient service</h2>
-      <p>The four recognition images are linked from the original Artistic Hair Transplant Centre website.</p>
+      <p>Recognition from the original Artistic Hair Transplant Clinic Kenya brand, represented locally by Artistic Hair Transplant Clinic Uganda.</p>
     </div>
 
     <div class="row g-4">
@@ -553,7 +586,7 @@
       <div class="row align-items-center g-4">
         <div class="col-lg-8">
           <h2>Ready to check your hair restoration options?</h2>
-          <p>Send clear photos of your hairline, crown and donor area. The clinic team can guide you on whether hair transplant, PRP or SMP is the better option.</p>
+          <p>Send clear photos of your hairline, crown and donor area to the Uganda clinic. Our team will guide you on whether hair transplant, PRP, SMP or another scalp treatment is the better option.</p>
         </div>
         <div class="col-lg-4 text-lg-end position-relative" style="z-index:2;">
           <a href="https://wa.me/256701506573" class="btn-main"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
@@ -570,12 +603,13 @@
         <div class="contact-box">
           <h4>Book Consultation</h4>
           <p class="text-muted">Fill in your details and the clinic team will contact you.</p>
-          <form>
-            <div class="mb-3"><input type="text" class="form-control" placeholder="Full Name"></div>
-            <div class="mb-3"><input type="tel" class="form-control" placeholder="Phone Number"></div>
-            <div class="mb-3"><input type="email" class="form-control" placeholder="Email Address"></div>
-            <div class="mb-3"><select class="form-select"><option>Select Treatment</option><option>Hair Transplant</option><option>PRP Therapy</option><option>Beard Transplant</option><option>Scalp Micropigmentation</option><option>Eyebrow Transplant</option></select></div>
-            <button type="submit" class="btn-main w-100 justify-content-center">Submit Assessment</button>
+          <form id="whatsappAssessmentForm">
+            <div class="mb-3"><input type="text" id="fullName" class="form-control" placeholder="Full Name" required></div>
+            <div class="mb-3"><input type="tel" id="phoneNumber" class="form-control" placeholder="Phone Number" required></div>
+            <div class="mb-3"><input type="email" id="emailAddress" class="form-control" placeholder="Email Address"></div>
+            <div class="mb-3"><select class="form-select" id="selectedTreatment" required><option value="">Select Treatment</option><option>Hair Transplant</option><option>PRP Therapy</option><option>Beard Transplant</option><option>Scalp Micropigmentation</option><option>Eyebrow Transplant</option></select></div>
+            <div class="mb-3"><textarea id="clientMessage" class="form-control" rows="4" placeholder="Tell us briefly about your hair concern"></textarea></div>
+            <button type="submit" class="btn-main w-100 justify-content-center"><i class="bi bi-whatsapp"></i> Submit Assessment on WhatsApp</button>
           </form>
         </div>
       </div>
@@ -595,9 +629,10 @@
 
 <footer>
   <div class="container">
-    <img src="images/logo.avif" alt="Artistic Logo">
     <h5 class="fw-bold">ARTISTIC HAIR TRANSPLANT CLINIC UGANDA</h5>
+    <p>Uganda clinic connected to Artistic Hair Transplant Clinic Kenya.</p>
     <p>© 2026 Artistic Hair Transplant Clinic Uganda. All Rights Reserved.</p>
+    <p class="mt-2">Designed by <a href="https://nexacode.net" target="_blank" rel="noopener" style="color:#35b4c2;text-decoration:none;font-weight:800;">NexaCode UG SMC Limited</a></p>
   </div>
 </footer>
 
@@ -614,6 +649,29 @@
       if(nav.classList.contains('show')) new bootstrap.Collapse(nav).hide();
     });
   });
+
+  const whatsappAssessmentForm = document.getElementById('whatsappAssessmentForm');
+  if (whatsappAssessmentForm) {
+    whatsappAssessmentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const fullName = document.getElementById('fullName').value.trim();
+      const phoneNumber = document.getElementById('phoneNumber').value.trim();
+      const emailAddress = document.getElementById('emailAddress').value.trim();
+      const selectedTreatment = document.getElementById('selectedTreatment').value.trim();
+      const clientMessage = document.getElementById('clientMessage').value.trim();
+      const message = `Hello Artistic Hair Transplant Clinic Uganda, I would like to book a hair assessment.
+
+Name: ${fullName}
+Phone: ${phoneNumber}
+Email: ${emailAddress || 'Not provided'}
+Treatment: ${selectedTreatment}
+Concern: ${clientMessage || 'Not provided'}
+
+Please guide me on the next step.`;
+      window.open(`https://wa.me/256701506573?text=${encodeURIComponent(message)}`, '_blank');
+    });
+  }
+
 </script>
 </body>
 </html>
