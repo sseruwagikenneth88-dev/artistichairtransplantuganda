@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artistic Hair Transplant Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --teal:#35b4c2;
+      --teal-dark:#168a98;
+      --ink:#071113;
+      --soft:#eefbfc;
+      --white:#ffffff;
+      --muted:#607087;
+      --line:#cfedf1;
+      --aqua:#e8f8fa;
+      --shadow:0 26px 70px rgba(7,17,19,.13);
+      --shadow-soft:0 18px 45px rgba(53,180,194,.16);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Manrope', Arial, Helvetica, sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    a{text-decoration:none;}
+    section{padding:95px 0;position:relative;}
+
+    .navbar{background:rgba(255,255,255,.82);backdrop-filter:blur(22px);box-shadow:0 12px 40px rgba(7,17,19,.07);padding:12px 0;border-bottom:1px solid rgba(207,237,241,.7);}
+    .navbar-brand{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;color:var(--ink)!important;letter-spacing:.2px;font-size:18px;}
+    .logo-img{width:50px;height:50px;object-fit:contain;margin-right:10px;}
+    .nav-link{font-weight:800;color:var(--ink)!important;margin-left:12px;position:relative;font-size:13px;text-transform:uppercase;letter-spacing:.45px;}
+    .nav-link:after{content:"";position:absolute;left:0;bottom:2px;width:0;height:2px;background:var(--teal);transition:.25s;}
+    .nav-link:hover,.nav-link.active{color:var(--teal)!important;}
+    .nav-link:hover:after{width:100%;}
+    .navbar-toggler{border:0;box-shadow:none!important;}
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding-top:125px;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(53,180,194,.18), transparent 26%),
+        radial-gradient(circle at 88% 18%, rgba(53,180,194,.16), transparent 32%),
+        linear-gradient(135deg,#fbffff 0%,#edfafa 47%,#ffffff 100%);
+      overflow:hidden;
+      isolation:isolate;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      width:640px;
+      height:640px;
+      right:-260px;
+      top:75px;
+      background:linear-gradient(135deg,rgba(53,180,194,.16),rgba(255,255,255,0));
+      border-radius:50%;
+      filter:blur(.2px);
+      animation:float 9s ease-in-out infinite;
+      z-index:-1;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;
+      left:-90px;
+      bottom:-120px;
+      width:320px;
+      height:320px;
+      border-radius:50%;
+      background:rgba(53,180,194,.10);
+      z-index:-1;
+      animation:float 8s ease-in-out infinite reverse;
+    }
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 18px;
+      border:1px solid rgba(53,180,194,.26);
+      border-radius:999px;
+      background:rgba(255,255,255,.78);
+      font-weight:800;
+      color:var(--teal-dark);
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(12px);
+    }
+    .hero h1{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(44px,6.1vw,86px);
+      font-weight:800;
+      letter-spacing:-3px;
+      line-height:.98;
+      margin:24px 0 24px;
+      color:var(--ink);
+    }
+    .hero h1 span{
+      color:var(--teal);
+      background:linear-gradient(90deg,var(--teal),#1d95a4);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .hero p{
+      font-size:20px;
+      color:var(--muted);
+      max-width:650px;
+      margin-bottom:34px;
+      line-height:1.85;
+      font-weight:500;
+    }
+    .hero-card{
+      position:relative;
+      border-radius:42px;
+      overflow:hidden;
+      box-shadow:0 34px 90px rgba(7,17,19,.18);
+      background:linear-gradient(145deg,#ffffff,#eaf8fa);
+      padding:18px;
+      transform:perspective(900px) rotateY(-4deg);
+      transition:.45s ease;
+    }
+    .hero-card:hover{transform:perspective(900px) rotateY(0deg) translateY(-6px);}
+    .hero-card:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:42px;
+      padding:1px;
+      background:linear-gradient(135deg,rgba(53,180,194,.75),rgba(255,255,255,.35),rgba(7,17,19,.08));
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      pointer-events:none;
+    }
+    .hero-card:after{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border-radius:30px;
+      background:linear-gradient(180deg,rgba(7,17,19,.02),rgba(7,17,19,.18));
+      pointer-events:none;
+    }
+    .hero-card img{
+      width:100%;
+      height:560px;
+      object-fit:cover;
+      border-radius:30px;
+      filter:saturate(1.06) contrast(1.04);
+      display:block;
+    }
+    .hero-stats{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .mini-stat{
+      padding:14px 17px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.75);
+      box-shadow:0 16px 35px rgba(53,180,194,.11);
+      backdrop-filter:blur(12px);
+      font-weight:800;
+      color:var(--ink);
+    }
+    .mini-stat span{display:block;color:var(--muted);font-size:12px;font-weight:700;margin-top:2px;}
+
+    .btn-main{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff!important;padding:15px 30px;border-radius:999px;font-weight:900;border:2px solid transparent;transition:.28s;box-shadow:0 16px 38px rgba(53,180,194,.28);}
+    .btn-main:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(53,180,194,.36);}
+    .btn-ghost{display:inline-flex;align-items:center;gap:10px;color:var(--ink)!important;padding:15px 30px;border-radius:999px;font-weight:900;border:2px solid var(--line);background:rgba(255,255,255,.72);transition:.28s;backdrop-filter:blur(10px);}
+    .btn-ghost:hover{border-color:var(--teal);color:var(--teal)!important;transform:translateY(-3px);}
+
+    .section-heading{max-width:760px;margin:0 auto 50px;text-align:center;}
+    .eyebrow{color:var(--teal);font-weight:900;text-transform:uppercase;letter-spacing:1.4px;font-size:13px;margin-bottom:10px;}
+    .section-heading h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(32px,4.2vw,50px);font-weight:800;letter-spacing:-1.4px;margin-bottom:12px;}
+    .section-heading p{color:var(--muted);line-height:1.7;margin:0;}
+
+    .about-section{background:#fff;overflow:hidden;}
+    .about-panel{background:linear-gradient(135deg,var(--ink),#161616);color:#fff;border-radius:36px;padding:42px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+    .about-panel:after{content:"";position:absolute;right:-100px;top:-100px;width:280px;height:280px;border-radius:50%;border:48px solid rgba(58,174,189,.16);}
+    .about-panel h2{font-size:clamp(32px,4vw,50px);font-weight:900;position:relative;z-index:2;}
+    .about-panel p{color:#d7d7d7;line-height:1.78;margin-bottom:18px;position:relative;z-index:2;}
+    .about-points{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;position:relative;z-index:2;}
+    .about-point{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:18px;}
+    .about-point i{color:var(--teal);font-size:24px;}
+    .about-point h5{font-weight:900;margin:10px 0 3px;}
+    .about-point span{color:#cfcfcf;font-size:13px;}
+
+    .client-frame{background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;height:100%;box-shadow:0 14px 40px rgba(0,0,0,.07);transition:.25s;}
+    .client-frame:hover{transform:translateY(-8px);box-shadow:var(--shadow);}
+    .client-frame img{width:100%;height:300px;object-fit:cover;}
+    .client-frame .content{padding:22px;}
+    .client-frame h4{font-weight:900;font-size:19px;margin-bottom:6px;}
+    .client-frame p{color:var(--muted);margin:0;line-height:1.6;}
+    .media-strip{background:var(--soft);}
+
+    .treatment-strip{background:var(--soft);}
+    .treatment-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px;height:100%;transition:.25s;position:relative;overflow:hidden;}
+    .treatment-card:before{content:"";position:absolute;right:-42px;top:-42px;width:110px;height:110px;background:rgba(58,174,189,.11);border-radius:50%;transition:.25s;}
+    .treatment-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:rgba(58,174,189,.35);}
+    .treatment-card:hover:before{transform:scale(1.45);}
+    .icon-box{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:var(--soft);color:var(--teal);font-size:29px;margin-bottom:22px;}
+    .treatment-card h4{font-weight:900;margin-bottom:12px;}
+    .treatment-card p{color:var(--muted);line-height:1.65;margin:0;}
+
+    .team-feature{border-radius:34px;overflow:hidden;box-shadow:var(--shadow);height:100%;}
+    .team-feature img{width:100%;height:100%;min-height:520px;object-fit:cover;}
+    .team-list{display:grid;gap:16px;}
+    .team-person{display:flex;align-items:center;gap:18px;padding:18px;border-radius:24px;background:#fff;border:1px solid var(--line);transition:.25s;}
+    .team-person:hover{transform:translateX(8px);box-shadow:0 18px 45px rgba(0,0,0,.08);}
+    .team-person img{width:78px;height:78px;border-radius:18px;object-fit:cover;}
+    .team-person h5{font-weight:900;margin-bottom:2px;}
+    .team-person p{margin:0;color:var(--muted);font-size:14px;}
+
+    .simple-cta{background:linear-gradient(135deg,var(--ink),#151515);color:#fff;border-radius:38px;padding:46px;overflow:hidden;position:relative;}
+    .simple-cta:after{content:"";position:absolute;right:-100px;bottom:-100px;width:260px;height:260px;border-radius:50%;border:45px solid rgba(58,174,189,.2);}
+    .simple-cta h2{font-weight:900;font-size:clamp(30px,4vw,48px);position:relative;z-index:2;}
+    .simple-cta p{color:#d7d7d7;max-width:650px;line-height:1.7;position:relative;z-index:2;}
+
+    .contact-box{background:var(--soft);border-radius:30px;padding:34px;border:1px solid var(--line);height:100%;}
+    .contact-box h4{font-weight:900;}
+    .contact-item{display:flex;gap:14px;margin:18px 0;color:var(--muted);}
+    .contact-item i{color:var(--teal);font-size:22px;}
+    .form-control,.form-select{border-radius:16px;padding:14px;border:1px solid #dbecef;}
+    .form-control:focus,.form-select:focus{border-color:var(--teal);box-shadow:0 0 0 .2rem rgba(58,174,189,.16);}
+
+
+
+    .before-after-section{background:#fff;}
+    .ba-card{background:#fff;border:1px solid var(--line);border-radius:30px;overflow:hidden;height:100%;box-shadow:0 16px 45px rgba(0,0,0,.08);transition:.25s;}
+    .ba-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);}
+    .ba-images{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--ink);}
+    .ba-img{position:relative;min-height:300px;overflow:hidden;}
+    .ba-img img{width:100%;height:100%;min-height:300px;object-fit:cover;transition:.35s;}
+    .ba-card:hover .ba-img img{transform:scale(1.04);}
+    .ba-tag{position:absolute;left:14px;top:14px;background:rgba(8,8,8,.78);color:#fff;border:1px solid rgba(255,255,255,.16);padding:7px 13px;border-radius:50px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;}
+    .ba-tag.after{background:var(--teal);}
+    .ba-content{padding:24px;}
+    .ba-content h4{font-weight:900;margin-bottom:7px;}
+    .ba-content p{color:var(--muted);line-height:1.65;margin:0;}
+
+    .awards-section{background:linear-gradient(135deg,#f7feff 0%,#ffffff 60%,#eefbfc 100%);overflow:hidden;}
+    .award-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;text-align:center;height:100%;box-shadow:0 14px 40px rgba(0,0,0,.07);transition:.25s;position:relative;overflow:hidden;}
+    .award-card:before{content:"";position:absolute;right:-42px;top:-42px;width:110px;height:110px;background:rgba(58,174,189,.10);border-radius:50%;}
+    .award-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);}
+    .award-card img{height:116px;width:auto;max-width:100%;object-fit:contain;margin-bottom:20px;position:relative;z-index:2;}
+    .award-card h4{font-size:19px;font-weight:900;margin-bottom:8px;position:relative;z-index:2;}
+    .award-card p{color:var(--muted);line-height:1.6;margin:0;position:relative;z-index:2;}
+
+    footer{background:var(--ink);color:#fff;padding:34px 0;text-align:center;}
+    footer img{width:58px;height:58px;object-fit:contain;margin-bottom:12px;}
+    footer p{color:#cccccc;margin:0;}
+    .whatsapp-float{position:fixed;right:22px;bottom:22px;width:62px;height:62px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:32px;z-index:999;text-decoration:none;box-shadow:0 18px 35px rgba(0,0,0,.22);transition:.25s;}
+    .whatsapp-float:hover{color:#fff;transform:scale(1.07);}
+
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
+
+    @media(max-width:991px){.hero{text-align:center}.hero p{margin-left:auto;margin-right:auto}.hero-card{margin-top:38px}.floating-card{left:20px}.nav-link{margin-left:0;padding:12px 0}.team-feature img{min-height:360px}.about-points{grid-template-columns:1fr}}
+    @media(max-width:575px){section{padding:75px 0}.simple-cta,.about-panel{padding:28px;border-radius:28px}.hero-card img{height:410px}.floating-card{position:static;margin-top:15px;max-width:100%;}.btn-main,.btn-ghost{width:100%;justify-content:center;margin-bottom:10px}.team-person{align-items:flex-start}.team-person img{width:64px;height:64px}.client-frame img{height:250px}}
+  
+    .hero .container{z-index:2;}
+    .hero .row{position:relative;}
+    .hero .row:before{
+      content:"";
+      position:absolute;
+      width:190px;
+      height:190px;
+      right:47%;
+      top:10%;
+      background:linear-gradient(135deg,rgba(53,180,194,.20),rgba(255,255,255,.08));
+      border-radius:35px;
+      transform:rotate(18deg);
+      filter:blur(.2px);
+      z-index:-1;
+      animation:float 10s ease-in-out infinite;
+    }
+    @media(max-width:991px){
+      .hero h1{letter-spacing:-2px;}
+      .hero-card{transform:none;}
+      .hero-stats{justify-content:center;}
+    }
+    @media(max-width:575px){
+      .hero h1{font-size:clamp(42px,15vw,58px);letter-spacing:-2px;}
+      .hero p{font-size:17px;line-height:1.7;}
+      .hero-card img{height:390px;}
+      .mini-stat{width:100%;text-align:center;}
+    }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#home">
+      <img src="images/logo.avif" class="logo-img" alt="Artistic Logo">
+      ARTISTIC
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.artisticbuz.com/" target="_blank" rel="noopener">Calculator</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="#treatments">Treatments</a></li>
+        <li class="nav-item"><a class="nav-link" href="#before-after">Before & After</a></li>
+        <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="hero-badge"><i class="bi bi-stars"></i> Afro-Textured Hair Restoration</div>
+        <h1>Reclaim Your Confidence. <span>Restore Your Hair.</span></h1>
+        <p>Uganda's leading clinic for Afro-textured hair transplants, hair restoration and scalp treatments — where expertise meets exceptional results.</p>
+        <div class="d-sm-flex gap-3 justify-content-lg-start justify-content-center">
+          <a href="https://www.artisticbuz.com/" target="_blank" rel="noopener" class="btn-main"><i class="bi bi-calculator"></i> Hair Calculator</a>
+          <a href="#about" class="btn-ghost"><i class="bi bi-arrow-down-circle"></i> About Us</a>
+        </div>
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="180">
+          <div class="mini-stat">Since 2015<span>Specialized clinic</span></div>
+          <div class="mini-stat">FUE + SMP<span>Advanced treatments</span></div>
+          <div class="mini-stat">Afro Hair<span>Focused expertise</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="hero-card">
+          <img src="images/background.avif" alt="Hair transplant clinic">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-panel" data-aos="fade-up">
+      <div class="eyebrow">About Us</div>
+      <h2>Specialized hair restoration for Afro-textured hair since 2015.</h2>
+      <div class="row g-4 mt-3">
+        <div class="col-lg-6">
+          <p>Artistic Hair Transplant Centre is a modern, specialized clinic in Nairobi, Kenya since 2015, dedicated to advanced hair restoration for men and women with Afro-textured hair.</p>
+          <p>Our team has extensive experience working with tightly-coiled, curly, and kinky hair types, ensuring every procedure respects the unique structure, curl pattern, and follicular characteristics of African hair.</p>
+          <p>We provide exceptional Scalp Micropigmentation (SMP) and FUE (Follicular Unit Extraction) services, each tailored to the individual needs of clients seeking natural-looking density, refined hairlines, and long-lasting results.</p>
+        </div>
+        <div class="col-lg-6">
+          <p>Our facility utilizes advanced, minimally invasive techniques designed specifically to protect the curvature of Afro hair follicles — allowing patients to achieve excellent cosmetic outcomes with minimal risk and downtime.</p>
+          <p>By combining the latest FUE technologies with expertly executed SMP sessions for clients who prefer non-surgical solutions, our highly trained trichology team delivers leading-edge treatments in a comfortable, supportive, and culturally aware environment.</p>
+          <p>We offer a client-centered approach to correcting hair loss, thinning, traction alopecia, and male or female pattern baldness with precision to minimize scarring, maximize density, and blend seamlessly with natural Afro-textured hair.</p>
+        </div>
+      </div>
+      <div class="about-points">
+        <div class="about-point"><i class="bi bi-scissors"></i><h5>FUE Hair Transplant</h5><span>Minimally invasive follicle extraction.</span></div>
+        <div class="about-point"><i class="bi bi-brush"></i><h5>SMP Treatment</h5><span>Non-surgical density appearance.</span></div>
+        <div class="about-point"><i class="bi bi-person-check"></i><h5>Afro Hair Focus</h5><span>Curly, coiled and kinky hair expertise.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="media-strip" id="media">
+  <div class="container">
+    <div class="section-heading" data-aos="fade-up">
+      <div class="eyebrow">Clinic Moments</div>
+      <h2>Trusted public figures and patient stories</h2>
+      <p>Framed images referenced from the original Artistic Hair Transplant Centre website section.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up">
+        <div class="client-frame">
+          <img src="images/Ferdinand.avif" alt="Ferdinand Waititu at Artistic Hair Transplant Centre">
+          <div class="content"><h4>Ferdinand Waititu</h4><p>Former Governor of Kiambu County.</p></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+        <div class="client-frame">
+          <img src="images/sonko.avif" alt="Mike Sonko hair transplant procedure Nairobi">
+          <div class="content"><h4>Mike Sonko</h4><p>Former Governor of Nairobi City County.</p></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+        <div class="client-frame">
+          <img src="images/babu.avif" alt="Hon. Dr. Babu Owino at Artistic Hair Transplant Centre">
+          <div class="content"><h4>Hon. Dr. Babu Owino</h4><p>Kenyan public figure and leader.</p></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+        <div class="client-frame">
+          <img src="images/sabina.avif" alt="Hon. Sabina Chege at Artistic Hair Transplant Centre">
+          <div class="content"><h4>Hon. Sabina Chege</h4><p>Member of the Kenyan Parliament.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team-strip" id="team">
+  <div class="container">
+    <div class="section-heading" data-aos="fade-up">
+      <div class="eyebrow">Our Team</div>
+      <h2>Specialists focused on natural results</h2>
+      <p>A clean team layout that feels premium without too many cards or crowded sections.</p>
+    </div>
+
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-5" data-aos="fade-right">
+        <div class="team-feature">
+          <img src="images/jared.avif" alt="Artistic team specialist">
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="team-list">
+          <div class="team-person"><img src="images/Abhishek.avif" alt="Dr. Abhishek Malviya"><div><h5>Dr. Abhishek Malviya</h5><p>Dermatologist / Hair Trichologist</p></div></div>
+          <div class="team-person"><img src="images/jared.avif" alt="Jared H Babu"><div><h5>Jared H Babu</h5><p>Hair Trichologist / Micropigmentologist</p></div></div>
+          <div class="team-person"><img src="images/mercy.avif" alt="Dr. Mercy Makana"><div><h5>Dr. Mercy Makana Ndege</h5><p>Consultant Plastic, Reconstructive & Aesthetic Surgeon</p></div></div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="treatment-strip" id="treatments">
+  <div class="container">
+    <div class="section-heading" data-aos="fade-up">
+      <div class="eyebrow">Treatments</div>
+      <h2>Advanced hair and scalp solutions</h2>
+      <p>The page uses the logo colors — black, white and turquoise — with soft animation and a cleaner modern layout.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><div class="treatment-card"><div class="icon-box"><i class="bi bi-person-check"></i></div><h4>Hair Transplant</h4><p>Modern FUE restoration for receding hairlines, thinning fronts, crown loss and density improvement.</p></div></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80"><div class="treatment-card"><div class="icon-box"><i class="bi bi-droplet-half"></i></div><h4>PRP Treatment</h4><p>Platelet-rich plasma support for weak follicles, thinning hair and natural hair regrowth support.</p></div></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160"><div class="treatment-card"><div class="icon-box"><i class="bi bi-brush"></i></div><h4>Scalp Micropigmentation</h4><p>Non-surgical scalp shading to create a cleaner, fuller and more defined hair appearance.</p></div></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up"><div class="treatment-card"><div class="icon-box"><i class="bi bi-gender-male"></i></div><h4>Beard Transplant</h4><p>Restoration for patchy or thin beards using careful natural follicle placement.</p></div></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80"><div class="treatment-card"><div class="icon-box"><i class="bi bi-eye"></i></div><h4>Eyebrow Transplant</h4><p>Natural eyebrow rebuilding for thin, missing or over-plucked brows.</p></div></div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160"><div class="treatment-card"><div class="icon-box"><i class="bi bi-stars"></i></div><h4>Aesthetic Treatments</h4><p>Skin care, microneedling, PRP and facial rejuvenation treatments in one clinic.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="before-after-section" id="before-after">
+  <div class="container">
+    <div class="section-heading" data-aos="fade-up">
+      <div class="eyebrow">Before & After</div>
+      <h2>Visible hair restoration transformations</h2>
+      <p>Before and after patient images linked directly from the original Artistic Hair Transplant Centre website gallery.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-up">
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img"><img src="images/one.avif" alt="Before hair restoration client"><span class="ba-tag">Before</span></div>
+            <div class="ba-img"><img src="images/oneone.avif" alt="After hair restoration client"><span class="ba-tag after">After</span></div>
+          </div>
+          <div class="ba-content"><h4>Hairline Density Improvement</h4><p>A clean side-by-side frame showing restored frontal density and a more defined hairline appearance.</p></div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img"><img src="images/two.avif" alt="Before hairline restoration"><span class="ba-tag">Before</span></div>
+            <div class="ba-img"><img src="images/twotwo.avif" alt="After hairline restoration"><span class="ba-tag after">After</span></div>
+          </div>
+          <div class="ba-content"><h4>Female Hairline Restoration</h4><p>Focused restoration for thinning hairline areas while maintaining a natural Afro-textured hair appearance.</p></div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up">
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img"><img src="images/three.avif" alt="Before male hair transplant"><span class="ba-tag">Before</span></div>
+            <div class="ba-img"><img src="images/threethree.avif" alt="After male hair transplant"><span class="ba-tag after">After</span></div>
+          </div>
+          <div class="ba-content"><h4>Frontal Hairline Correction</h4><p>Designed to rebuild the front hairline and improve the overall look of the face.</p></div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-img"><img src="images/four.avif" alt="Before hair transplant result"><span class="ba-tag">Before</span></div>
+            <div class="ba-img"><img src="images/fourfour.avif" alt="After hair transplant result"><span class="ba-tag after">After</span></div>
+          </div>
+          <div class="ba-content"><h4>Natural-Looking Result</h4><p>A patient-focused result section using the original gallery images from the clinic website.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="awards-section" id="awards">
+  <div class="container">
+    <div class="section-heading" data-aos="fade-up">
+      <div class="eyebrow">Awards & Recognition</div>
+      <h2>Recognized clinic standards and patient service</h2>
+      <p>The four recognition images are linked from the original Artistic Hair Transplant Centre website.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up">
+        <div class="award-card">
+          <img src="https://static.wixstatic.com/media/949d69_f51e91a6492743b582330ff92d86e472~mv2.jpg/v1/fill/w_106%2Ch_106%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/SPCP.jpg" alt="Society of Permanent Cosmetic Professionals recognition">
+          <h4>SPCP Recognition</h4>
+          <p>Permanent cosmetic professional standards and recognition.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+        <div class="award-card">
+          <img src="https://static.wixstatic.com/media/949d69_43efe7b5d40440c08cd661b888d8cb4a~mv2_d_1868_2152_s_2.jpg/v1/fill/w_90%2Ch_106%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/cpcp_logo.jpg" alt="CPCP certification">
+          <h4>CPCP Certification</h4>
+          <p>Certification connected to cosmetic and micropigmentation practice.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+        <div class="award-card">
+          <img src="https://static.wixstatic.com/media/949d69_38dfea595d4e4660bbe43be16d9b2bf7~mv2.png/v1/fill/w_106%2Ch_106%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/what%20clinic%20award%202016.png" alt="WhatClinic Customer Service Award 2016">
+          <h4>Customer Service Award</h4>
+          <p>WhatClinic 2016 Customer Service Award recognition.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+        <div class="award-card">
+          <img src="https://static.wixstatic.com/media/949d69_1b6bbf8b149a4eee93749a0c8c3535ab~mv2.png/v1/fill/w_114%2Ch_106%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/what-clinic-award-300x300.png" alt="WhatClinic Patient Service Award 2017">
+          <h4>Patient Service Award</h4>
+          <p>WhatClinic 2017 Patient Service Award recognition.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="simple-cta" data-aos="fade-up">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h2>Ready to check your hair restoration options?</h2>
+          <p>Send clear photos of your hairline, crown and donor area. The clinic team can guide you on whether hair transplant, PRP or SMP is the better option.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end position-relative" style="z-index:2;">
+          <a href="https://wa.me/256701506573" class="btn-main"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pt-0" id="contact">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="contact-box">
+          <h4>Book Consultation</h4>
+          <p class="text-muted">Fill in your details and the clinic team will contact you.</p>
+          <form>
+            <div class="mb-3"><input type="text" class="form-control" placeholder="Full Name"></div>
+            <div class="mb-3"><input type="tel" class="form-control" placeholder="Phone Number"></div>
+            <div class="mb-3"><input type="email" class="form-control" placeholder="Email Address"></div>
+            <div class="mb-3"><select class="form-select"><option>Select Treatment</option><option>Hair Transplant</option><option>PRP Therapy</option><option>Beard Transplant</option><option>Scalp Micropigmentation</option><option>Eyebrow Transplant</option></select></div>
+            <button type="submit" class="btn-main w-100 justify-content-center">Submit Assessment</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="contact-box">
+          <h4>Contact Information</h4>
+          <div class="contact-item"><i class="bi bi-envelope"></i><span>jared.babu@artisticclinic.com</span></div>
+          <div class="contact-item"><i class="bi bi-telephone"></i><span>+256 701 506 573</span></div>
+          <div class="contact-item"><i class="bi bi-geo-alt"></i><span>Kulambiro Ring Road,<br>Fotogenix Centre,<br>Kampala, Uganda</span></div>
+          <hr>
+          <p class="text-muted mb-0">For faster consultation, contact the clinic directly through WhatsApp and send your photos for review.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <img src="images/logo.avif" alt="Artistic Logo">
+    <h5 class="fw-bold">ARTISTIC HAIR TRANSPLANT CLINIC UGANDA</h5>
+    <p>© 2026 Artistic Hair Transplant Clinic Uganda. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/256701506573" class="whatsapp-float" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({duration:850, once:true, offset:80});
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const nav = document.querySelector('.navbar-collapse');
+      if(nav.classList.contains('show')) new bootstrap.Collapse(nav).hide();
+    });
+  });
+</script>
+</body>
+</html>
